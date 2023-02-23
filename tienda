@@ -1,0 +1,164 @@
+package poo;
+import java.text.BreakIterator;
+import java.util.Scanner;
+//importo la clase doonde están los métodos
+import poo.caracteristica_producto;
+public class producto {
+    
+
+public static void main(String[] args) {
+    
+    //variables que usaré
+    String nombreUser; 
+    String sino;
+    String eleccion; 
+    double unidades=0;
+    
+    //creo un array con los 3 productos de la tienda
+    caracteristica_producto listaProducto[] = new caracteristica_producto[3];
+
+                                                //estos parametros están en el constructor de caracteristica_producto.
+    listaProducto[0]= new caracteristica_producto(" Color ", 1000, 0, true );
+    listaProducto[1]= new caracteristica_producto(" blackstar game ", 10000, 3, true );
+    listaProducto[2]= new caracteristica_producto(" paint it black ", 800, 1, true );
+
+
+
+    System.out.println("Bienvenido/a a nuestra tienda, por favor ddigite su nombre");
+
+    Scanner nmbruser = new Scanner(System.in); //aquí importo la clase scanner para pedir datos
+
+    nombreUser = nmbruser.next(); //le pido al usuario el dato que quiero
+
+    System.out.println("Hola, " + nombreUser + " por favor elige el producto que quieres llevar");
+
+    System.out.println("Desea continuar? ");
+    sino = nmbruser.next();
+         
+            for (caracteristica_producto p : listaProducto) {
+            
+                System.out.println(p.getNombre()+  "\n"+ "\n" +" Cantidad disponible: "+ p.getCantStock() + 
+                "\n " + "\n" +
+                " " + "Precio por unidad: " +
+                "$"+ p.getPrecioxunidad()+"\n" +"\n" );}
+        
+        
+       
+
+        System.out.println(" \n" + "¿Cuál producto quiere?" + "\n" );
+        
+        eleccion = nmbruser.next();
+
+
+    
+
+    if (eleccion == "color") {
+        System.out.println("Este producto tiene las siguientes características: " + "\n");
+
+        for (caracteristica_producto caracteristica_producto : listaProducto) {
+            System.out.println(listaProducto[0].getNombre()+ 
+             "\n"+ "\n" +" Cantidad disponible: "+ listaProducto[0].getCantStock() + 
+            "\n " + "\n" +
+            " " + "Precio por unidad: " +
+            "$"+ listaProducto[0].getPrecioxunidad()+"\n" +"\n" );
+        } 
+        }
+    
+    
+
+    if (eleccion =="blackstar") {
+        for (caracteristica_producto caracteristica_producto : listaProducto) {
+            System.out.println(listaProducto[1].getNombre()+  "\n"+ "\n" +" Cantidad disponible: "+ 
+            listaProducto[1].getCantStock() + 
+            "\n " + "\n" +
+            " " + "Precio por unidad: " +
+            "$"+ listaProducto[1].getPrecioxunidad()+"\n" +"\n" );    
+        }    
+        }
+        
+        
+    if (eleccion =="paintitblack") {
+        for (caracteristica_producto caracteristica_producto : listaProducto) {
+            System.out.println(listaProducto[2].getNombre()+  
+            "\n"+ "\n" +" Cantidad disponible: "+ listaProducto[2].getCantStock() + 
+            "\n " + "\n" +
+            " " + "Precio por unidad: " +
+            "$"+ listaProducto[2].getPrecioxunidad()+"\n" +"\n" );   
+            }  
+            }      
+            
+
+            System.out.println("¿Cuántas unidades llevará?");
+            
+            unidades=nmbruser.nextDouble();
+            
+            System.out.println(" \n" + 
+            " el valor a pagar es: " + "\n" + "$" + listaProducto[2].getPrecioxunidad() * unidades + 
+    "\n" + "Gracias por tu compra.");  
+
+    
+
+
+}}
+
+public class caracteristica_producto {
+
+
+ String nombre;
+ double precioXunidad;
+ int cantStock;
+ boolean disponible = false;
+ String Dispo;
+
+
+//constructor
+
+public caracteristica_producto(String nombre, double precioXunidad, int cantStock, boolean disponible ){
+    //this para decirle que la variable de la clase es igual al del constructor
+    this.nombre = nombre;
+    this.cantStock=cantStock;
+    this.disponible=disponible;
+    this.precioXunidad=precioXunidad;
+
+}
+
+//escribo los métods que usaré y que harán mostrar los datos
+
+public String getNombre(){
+    return "Producto: " + nombre; //aquí ya lo devuelve 
+}
+public void setNombre(String nombre){
+    this.nombre = nombre; //este métdo me pide el nombre en parametro
+}
+public  double  getPrecioxunidad(){
+    return   precioXunidad;
+
+}
+public void setPrecioxunidad(double precioXunidad){
+    this.precioXunidad=precioXunidad;
+}
+
+public int getCantStock(){
+    return cantStock;
+}
+
+public void setCantStock(int cantStock){
+    this.cantStock=cantStock;
+}
+public boolean getDisponible(){
+    
+    if (getCantStock()>0) disponible=true;
+    return disponible;
+
+}
+
+public void setDisponible(boolean disponible){
+    this.disponible=disponible;
+    
+
+}
+
+
+}
+
+
