@@ -6,7 +6,7 @@ public class caracteristica_producto {
  String nombre;
  double precioXunidad;
  int cantStock;
- boolean disponible = false;
+ boolean disponible = true;
  String Dispo;
 
 
