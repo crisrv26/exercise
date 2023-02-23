@@ -1,5 +1,4 @@
 package poo;
-import java.text.BreakIterator;
 import java.util.Scanner;
 //importo la clase doonde están los métodos
 import poo.caracteristica_producto;
