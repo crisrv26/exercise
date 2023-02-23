@@ -1,0 +1,63 @@
+}}
+
+public class caracteristica_producto {
+
+
+ String nombre;
+ double precioXunidad;
+ int cantStock;
+ boolean disponible = false;
+ String Dispo;
+
+
+//constructor
+
+public caracteristica_producto(String nombre, double precioXunidad, int cantStock, boolean disponible ){
+    //this para decirle que la variable de la clase es igual al del constructor
+    this.nombre = nombre;
+    this.cantStock=cantStock;
+    this.disponible=disponible;
+    this.precioXunidad=precioXunidad;
+
+}
+
+//escribo los métods que usaré y que harán mostrar los datos
+
+public String getNombre(){
+    return "Producto: " + nombre; //aquí ya lo devuelve 
+}
+public void setNombre(String nombre){
+    this.nombre = nombre; //este métdo me pide el nombre en parametro
+}
+public  double  getPrecioxunidad(){
+    return   precioXunidad;
+
+}
+public void setPrecioxunidad(double precioXunidad){
+    this.precioXunidad=precioXunidad;
+}
+
+public int getCantStock(){
+    return cantStock;
+}
+
+public void setCantStock(int cantStock){
+    this.cantStock=cantStock;
+}
+public boolean getDisponible(){
+    
+    if (getCantStock()>0) disponible=true;
+    return disponible;
+
+}
+
+public void setDisponible(boolean disponible){
+    this.disponible=disponible;
+    
+
+}
+
+
+}
+
+
